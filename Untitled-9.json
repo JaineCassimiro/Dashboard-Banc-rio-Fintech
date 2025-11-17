@@ -1,0 +1,57 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "deposit",
+        "withdrawal",
+        "transfer_sent",
+        "transfer_received"
+      ],
+      "description": "Tipo de transa\u00e7\u00e3o"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Valor da transa\u00e7\u00e3o"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o da transa\u00e7\u00e3o"
+    },
+    "recipient": {
+      "type": "string",
+      "description": "Nome do destinat\u00e1rio (para transfer\u00eancias)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "food",
+        "transport",
+        "shopping",
+        "entertainment",
+        "bills",
+        "health",
+        "education",
+        "other"
+      ],
+      "description": "Categoria da despesa"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "pending",
+        "cancelled"
+      ],
+      "default": "completed",
+      "description": "Status da transa\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "type",
+    "amount",
+    "description"
+  ]
+}

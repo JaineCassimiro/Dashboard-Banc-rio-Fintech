@@ -1,0 +1,50 @@
+{
+  "name": "Card",
+  "type": "object",
+  "properties": {
+    "card_number": {
+      "type": "string",
+      "description": "\u00daltimos 4 d\u00edgitos do cart\u00e3o"
+    },
+    "card_holder": {
+      "type": "string",
+      "description": "Nome no cart\u00e3o"
+    },
+    "card_type": {
+      "type": "string",
+      "enum": [
+        "credit",
+        "debit"
+      ],
+      "description": "Tipo do cart\u00e3o"
+    },
+    "brand": {
+      "type": "string",
+      "enum": [
+        "visa",
+        "mastercard",
+        "elo"
+      ],
+      "description": "Bandeira do cart\u00e3o"
+    },
+    "expiry_date": {
+      "type": "string",
+      "description": "Data de validade (MM/YY)"
+    },
+    "limit": {
+      "type": "number",
+      "description": "Limite do cart\u00e3o"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Cart\u00e3o ativo"
+    }
+  },
+  "required": [
+    "card_number",
+    "card_holder",
+    "card_type",
+    "brand"
+  ]
+}
